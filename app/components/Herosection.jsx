@@ -2,6 +2,9 @@
 import { motion, useAnimation } from "framer-motion";
 import { useState } from "react";
 
+// Make sure to import a heavy font like Poppins in your globals.css
+// @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
+
 export default function Herosection() {
   const controls = useAnimation();
   const [showAbout, setShowAbout] = useState(false);
@@ -40,13 +43,22 @@ export default function Herosection() {
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/40"></div>
 
-        {/* COHO Text - Responsive */}
+        {/* COHO Text - FINAL REVISION for exact gradient from image */}
         <motion.h1
-          className="absolute inset-0 flex items-center justify-center text-6xl sm:text-8xl md:text-9xl lg:text-[12rem] xl:text-[15rem] font-extrabold text-white/23 select-none"
+          className="absolute inset-0 flex items-center justify-center 
+             text-6xl sm:text-8xl md:text-9xl lg:text-[12rem] xl:text-[15rem] 
+             font-extrabold select-none
+             bg-gradient-to-r from-[#e03c3c] to-[#009cd9]
+             bg-clip-text "
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5 }}
-          style={{ zIndex: 10 }}
+          style={{
+            zIndex: 10,
+            fontFamily: "'Anton', sans-serif",
+            WebkitTextFillColor: "transparent",
+            // textShadow: "0 0 10px rgba(0,0,0,0.25)", // subtle depth, optional
+          }}
         >
           COHO
         </motion.h1>

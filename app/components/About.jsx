@@ -52,10 +52,19 @@ export default function About() {
   };
 
   return (
-    <main className="relative min-h-screen w-full bg-gradient-to-br from-black via-gray-900 to-black text-white overflow-hidden">
+    <main className="relative min-h-screen w-full text-white overflow-hidden bg-black">
+      {/* 🌌 Stars Background */}
+      <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/7736104/pexels-photo-7736104.jpeg')] bg-cover bg-center bg-no-repeat opacity-30"></div>
+
       {/* Background Text */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-[12rem] xl:text-[15rem] font-black text-white/5 select-none tracking-wider">
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none px-4">
+        {/* Mobile: one-line ABOUT */}
+        <h1 className="block sm:hidden text-5xl font-black text-white/5 select-none tracking-wider text-center">
+          ABOUT
+        </h1>
+
+        {/* Desktop: large multi-line ABOUT */}
+        <h1 className="hidden sm:block text-6xl sm:text-7xl md:text-8xl lg:text-[12rem] xl:text-[15rem] font-black text-white/5 select-none tracking-wider leading-tight">
           ABOUT
         </h1>
       </div>
